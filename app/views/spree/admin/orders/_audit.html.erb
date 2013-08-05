@@ -1,0 +1,21 @@
+<tr data-hook="audits_row" class="<%= cycle('odd', 'even')%>">
+  <td>
+    <% audit.audited_changes.each do |k, v| %>
+      <% if v.is_a? Array %>
+        <% if v[0].present? %>
+          <%= "<b>#{k}</b> changed from <b>#{v[0]}</b> to <b>#{v[1]}</b><br/>".html_safe %>
+        <% else %>
+          <%= "<b>#{k}</b> set to <b>#{v[1]}</b><br/>".html_safe %>
+        <% end %>
+      <% else %>
+        <%= "<b>#{k}</b> set to <b>#{v}</b><br/>".html_safe unless v.nil? %>
+      <% end %>
+    <% end %>
+  </td>
+  <td><%= pretty_time(audit.created_at) %></td>
+  <td><%= audit.try(:user).try(:email) %></td>
+  <td><%= audit.action %></td>
+  <% if audit.auditable.is_a? Spree::Shipment %>
+    <td><%= audit.auditable.number %></td>
+  <% end %>
+</tr>

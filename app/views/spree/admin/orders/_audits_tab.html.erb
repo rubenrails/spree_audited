@@ -1,0 +1,3 @@
+<li <%== ' class="active"' if (defined? current and current == 'Audited') %>>
+  <%= link_to_with_icon 'icon-info-sign', Spree.t(:audits), audits_admin_order_url(@order) %>
+</li>
