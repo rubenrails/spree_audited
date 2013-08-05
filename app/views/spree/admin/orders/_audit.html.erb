@@ -12,9 +12,10 @@
       <% end %>
     <% end %>
   </td>
-  <td><%= pretty_time(audit.created_at) %></td>
+  <td><%= I18n.l audit.created_at, :format => :short %></td>
   <td><%= audit.try(:user).try(:email) %></td>
   <td><%= audit.action %></td>
+  <td><%= audit.comment %></td>
   <% if audit.auditable.is_a? Spree::Shipment %>
     <td><%= audit.auditable.number %></td>
   <% end %>

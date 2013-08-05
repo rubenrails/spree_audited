@@ -9,3 +9,4 @@ en:
     no_changes_have_been_recorded: No changes have been recorded
     audited_changes: Changes
     changed_by: Changed by
+    audit_comment: Comment
