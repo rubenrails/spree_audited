@@ -15,7 +15,9 @@
   <td><%= I18n.l audit.created_at, :format => :short %></td>
   <td><%= audit.try(:user).try(:email) %></td>
   <td><%= audit.action %></td>
-  <td><%= audit.comment %></td>
+  <td>
+    <div class="audited_comment"><%= audit.comment %></div>
+  </td>
   <% if audit.auditable.is_a? Spree::Shipment %>
     <td><%= audit.auditable.number %></td>
   <% end %>
