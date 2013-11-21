@@ -2,7 +2,7 @@
 <div>
   <fieldset class="no-border-bottom">
     <legend align="center"><%= Spree.t(:order_changes) %></legend>
-    <% if @order.audits.empty? %>
+    <% if @all_audits.empty? %>
       <div class="no-objects-found">
         <%= Spree.t(:no_changes_have_been_recorded)%>
       </div>
@@ -10,46 +10,16 @@
       <table class="index">
         <thead>
           <tr data-hook="audits_header">
-            <th><%= Spree.t(:audited_changes) %></th>
             <th><%= "#{Spree.t('date')}/#{Spree.t('time')}" %></th>
+            <th><%= Spree.t(:audited_changes) %></th>
             <th><%= Spree.t(:changed_by) %></th>
             <th><%= Spree.t(:action) %></th>
-            <th><%= Spree.t(:audit_comment) %></th>
           </tr>
         </thead>
         <tbody>
-          <%= render :partial => 'spree/admin/orders/audit', :collection => @order.audits %>
+          <%= render @all_audits %>
         </tbody>
       </table>
     <% end %>
   </fieldset>
 </div>
-<div>
-  <fieldset class="no-border-bottom">
-    <legend align="center"><%= Spree.t(:shipments_changes) %></legend>
-    <% if @order.associated_audits.empty? %>
-      <div class="no-objects-found">
-        <%= Spree.t(:no_changes_have_been_recorded)%>
-      </div>
-    <% else %>
-      <table class="index">
-        <thead>
-          <tr data-hook="audits_header">
-            <th><%= Spree.t(:audited_changes) %></th>
-            <th><%= "#{Spree.t('date')}/#{Spree.t('time')}" %></th>
-            <th><%= Spree.t(:changed_by) %></th>
-            <th><%= Spree.t(:action) %></th>
-            <th><%= Spree.t(:audit_comment) %></th>
-            <th><%= Spree.t(:shipment) %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <%= render :partial => 'spree/admin/orders/audit', :collection => @order.associated_audits %>
-        </tbody>
-      </table>
-    <% end %>
-  </fieldset>
-</div>
-
-
-

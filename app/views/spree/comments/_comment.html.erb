@@ -1,0 +1,12 @@
+<tr data-hook="audits_row" class="<%= cycle('odd', 'even')%>">
+  <td>
+    <%= I18n.l comment.created_at, :format => :short %>
+  </td>
+  <td>
+    <%= comment.comment %>
+  </td>
+  <td>
+    <%= short_name comment.user %>
+  </td>
+  <td>comment</td>
+</tr>

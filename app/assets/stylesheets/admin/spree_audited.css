@@ -1,3 +1,26 @@
 /*
  *= require admin/spree_backend
 */
+.audit_badge {
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+    behavior: url(PIE.htc);
+
+    width: 15px;
+    height: 15px;
+    padding: 2px;
+
+    color: #fff;
+    text-align: center;
+
+    font: 10px Arial, sans-serif;
+    display: inline-block;
+
+    margin-left: 10px;
+}
+.audit_badge.o { background-color: #2980b9 }
+.audit_badge.li { background-color: #9b59b6 }
+.audit_badge.s { background-color: #f39c12 }
+.audit_badge.iu { background-color: #16a085 }
+.audit_badge.a { background-color: #e74c3c }

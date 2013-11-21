@@ -1,5 +1,9 @@
 <tr data-hook="audits_row" class="<%= cycle('odd', 'even')%>">
   <td>
+    <%= I18n.l audit.created_at, :format => :short %>
+    <%= audit_badge(audit) %>
+  </td>
+  <td>
     <% audit.audited_changes.each do |k, v| %>
       <% if v.is_a? Array %>
         <% if v[0].present? %>
@@ -12,13 +16,9 @@
       <% end %>
     <% end %>
   </td>
-  <td><%= I18n.l audit.created_at, :format => :short %></td>
-  <td><%= audit.try(:user).try(:email) %></td>
-  <td><%= audit.action %></td>
   <td>
-    <div class="audited_comment"><%= audit.comment %></div>
+    <span class="audited_comment"><%= collapsed_comment audit %></span>
+    <%= short_name(audit.user) %>
   </td>
-  <% if audit.auditable.is_a? Spree::Shipment %>
-    <td><%= audit.auditable.number %></td>
-  <% end %>
+  <td><%= audit.action %></td>
 </tr>
