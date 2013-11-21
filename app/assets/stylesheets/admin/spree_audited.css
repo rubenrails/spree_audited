@@ -24,3 +24,7 @@
 .audit_badge.s { background-color: #f39c12 }
 .audit_badge.iu { background-color: #16a085 }
 .audit_badge.a { background-color: #e74c3c }
+
+tr.children td:first-child:before {
+  content: '↳';
+}

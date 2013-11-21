@@ -1,4 +1,4 @@
-<tr data-hook="audits_row" class="<%= cycle('odd', 'even')%>">
+<tr data-hook="audits_row" class="<%= cycle('odd', 'even')%> <%= 'children' if audit.auditable.respond_to?(:parent_id) && audit.auditable.parent_id.present? %>">
   <td>
     <%= I18n.l audit.created_at, :format => :short %>
     <%= audit_badge(audit) %>
