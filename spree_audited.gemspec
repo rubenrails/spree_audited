@@ -22,32 +22,18 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<spree_api>, [">= 0"])
       s.add_runtime_dependency(%q<spree_backend>, [">= 0"])
-      s.add_runtime_dependency(%q<spree_core>, [">= 2.0.3"])
-      s.add_runtime_dependency(%q<audited-activerecord>, ["~> 3.0"])
+      s.add_runtime_dependency(%q<spree_core>, ["~> 2.1"])
       s.add_development_dependency(%q<rspec-rails>, [">= 0"])
     else
       s.add_dependency(%q<spree_api>, [">= 0"])
       s.add_dependency(%q<spree_backend>, [">= 0"])
-      s.add_dependency(%q<spree_core>, [">= 2.0.3"])
-      s.add_dependency(%q<audited-activerecord>, ["~> 3.0"])
+      s.add_dependency(%q<spree_core>, ["~> 2.1"])
       s.add_dependency(%q<rspec-rails>, [">= 0"])
     end
   else
     s.add_dependency(%q<spree_api>, [">= 0"])
     s.add_dependency(%q<spree_backend>, [">= 0"])
-    s.add_dependency(%q<spree_core>, [">= 2.0.3"])
-    s.add_dependency(%q<audited-activerecord>, ["~> 3.0"])
+    s.add_dependency(%q<spree_core>, ["~> 2.1"])
     s.add_dependency(%q<rspec-rails>, [">= 0"])
   end
-
-  s.add_development_dependency 'capybara', '~> 2.1'
-  s.add_development_dependency 'coffee-rails'
-  s.add_development_dependency 'database_cleaner'
-  s.add_development_dependency 'factory_girl', '~> 4.2'
-  s.add_development_dependency 'ffaker'
-  s.add_development_dependency 'rspec-rails',  '~> 2.13'
-  s.add_development_dependency 'sass-rails'
-  s.add_development_dependency 'selenium-webdriver'
-  s.add_development_dependency 'simplecov'
-  s.add_development_dependency 'sqlite3'
 end
