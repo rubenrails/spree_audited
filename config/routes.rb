@@ -5,5 +5,11 @@ Spree::Core::Engine.append_routes do
         get :audits
       end
     end
+
+    resources :products, only: [] do
+      member do
+        get :audits
+      end
+    end
   end
 end

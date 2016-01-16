@@ -1,4 +1,4 @@
 Spree::Product.class_eval do
-  audited
+  audited except: :preferences
   has_associated_audits
 end

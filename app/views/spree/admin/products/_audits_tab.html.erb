@@ -1,0 +1,3 @@
+<li <%== ' class="active"' if (defined? current and current == 'Audited') %>>
+  <%= link_to_with_icon 'icon-info-sign', 'Audits - Product history', audits_admin_product_url(@product) %>
+</li>

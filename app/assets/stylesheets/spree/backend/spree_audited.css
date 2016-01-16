@@ -22,6 +22,9 @@
 .audit_badge.iu { background-color: #16a085 }
 .audit_badge.a { background-color: #e74c3c }
 
+.audit_badge.p { background-color: #e74c3c }
+.audit_badge.v { background-color: #16a085 }
+
 tr.children td:first-child:before {
   content: '↳';
 }

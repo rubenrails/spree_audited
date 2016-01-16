@@ -1,25 +1,3 @@
 <%= render 'spree/admin/shared/order_tabs', :current => 'Audited' %>
-<div>
-  <fieldset class="no-border-bottom">
-    <legend align="center"><%= Spree.t(:order_changes) %></legend>
-    <% if @all_audits.empty? %>
-      <div class="no-objects-found">
-        <%= Spree.t(:no_changes_have_been_recorded)%>
-      </div>
-    <% else %>
-      <table class="table">
-        <thead>
-          <tr data-hook="audits_header">
-            <th><%= "#{Spree.t('date')}/#{Spree.t('time')}" %></th>
-            <th><%= Spree.t(:audited_changes) %></th>
-            <th><%= Spree.t(:changed_by) %></th>
-            <th><%= Spree.t(:action) %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <%= render @all_audits %>
-        </tbody>
-      </table>
-    <% end %>
-  </fieldset>
-</div>
+
+<%= render 'spree/admin/shared/audits' %>
